@@ -12,6 +12,20 @@ namespace WebApiTraining.Models
         public DbSet<TodoItem> TodoItems { get; set; }
 
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<TodoItem>()
+                .Property(todo => todo.CreatedAt)
+                .HasDefaultValueSql("now()");
+
+            modelBuilder.Entity<TodoItem>()
+                .Property(todo => todo.UpdatedAt)
+                .HasDefaultValueSql("now()");
+
+        }
+
+
+
 
     }
 
