@@ -9,15 +9,15 @@ namespace WebApiTraining.Models
     {
         public long Id { get; set; }
 
-        private string name;
+        private string _name;
 
 
         public string Name
         {
 
-            get => CultureInfo.CurrentCulture.TextInfo.ToTitleCase(name);
+            get => CultureInfo.CurrentCulture.TextInfo.ToTitleCase(_name);
 
-            set => name = value;
+            set => _name = value;
         }
 
         [Required]
